@@ -1,0 +1,25 @@
+# Rails
+/storage/*.sqlite3
+/storage/*.sqlite3-journal
+/log/*.log
+/tmp/
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/public/assets
+/node_modules
+.yarn
+.bundle
+.env
+.env.local
+.env.*.local
+
+# Electron
+client/node_modules/
+client/package-lock.json
+
+# System
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
