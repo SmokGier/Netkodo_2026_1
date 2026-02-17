@@ -23,3 +23,17 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+node_modules/
+*.deb
+*.exe
+*.dll
+*.so
+*.dylib
+dist/
+build/
+*.log
+.DS_Store
+node_modules/
+*.deb
+electron
