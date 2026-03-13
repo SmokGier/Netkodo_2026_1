@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  poll: one
+  user: one
+  option_index: 1
+
+two:
+  poll: two
+  user: two
+  option_index: 1

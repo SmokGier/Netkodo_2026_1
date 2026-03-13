@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discordo</title>
+  <link rel="stylesheet" href="discordo/style.css">
+</head>
+<body>
+  <div id="authContainer" class="auth-container">
+    <div class="auth-box">
+      <h2>Discordo</h2>
+      <div class="tabs">
+        <button id="loginTab" class="tab active">Logowanie</button>
+        <button id="registerTab" class="tab">Rejestracja</button>
+      </div>
+      <div id="loginError" class="error"></div>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="loginUsername">Nazwa użytkownika</label>
+          <input type="text" id="loginUsername" placeholder="Wpisz nazwę użytkownika" autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Hasło</label>
+          <input type="password" id="loginPassword" placeholder="Wpisz hasło" autocomplete="current-password">
+        </div>
+        <button type="button" id="loginButton" style="width:100%; padding:12px; background:#5865f2; color:white; border:none; border-radius:5px; font-weight:bold; cursor:pointer; margin-top:10px;">ZALOGUJ SIĘ</button>
+      </form>
+      <form id="registerForm" style="display:none;">
+        <div class="form-group">
+          <label for="registerUsername">Nazwa użytkownika</label>
+          <input type="text" id="registerUsername" placeholder="Wpisz nazwę użytkownika" autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label for="registerPassword">Hasło</label>
+          <input type="password" id="registerPassword" placeholder="Wpisz hasło (min. 6 znaków)" autocomplete="new-password">
+        </div>
+        <div class="form-group">
+          <label for="registerPasswordConfirm">Potwierdź hasło</label>
+          <input type="password" id="registerPasswordConfirm" placeholder="Powtórz hasło" autocomplete="new-password">
+        </div>
+        <div id="registerError" class="error"></div>
+        <button type="button" id="registerButton" style="width:100%; padding:12px; background:#5865f2; color:white; border:none; border-radius:5px; font-weight:bold; cursor:pointer; margin-top:10px;">ZAREJESTRUJ SIĘ</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="discordApp" class="discord-app">
+    <div class="server-sidebar">
+      <div id="serverList"></div>
+      <div id="addServer" class="server-icon add">+</div>
+    </div>
+    <div class="main-content">
+      <div class="channel-header">
+        <div id="currentChannelName">💬 Wiadomości prywatne</div>
+      </div>
+      <div class="messages" id="messages"></div>
+      <div class="message-input">
+        <input type="text" id="messageInput" placeholder="Napisz wiadomość...">
+        <button id="sendButton">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="createServerModal" class="modal">
+    <div class="modal-content">
+      <h3>Utwórz nowy serwer</h3>
+      <div class="form-group">
+        <label for="serverNameInput">Nazwa serwera</label>
+        <input type="text" id="serverNameInput" placeholder="Wpisz nazwę serwera">
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="privateServer">
+        <label for="privateServer" style="color:#b9bbbe; margin-left:5px;">Prywatny serwer (wymaga hasła)</label>
+      </div>
+      <div id="serverPasswordContainer" style="display:none;">
+        <div class="form-group">
+          <label for="serverPassword">Hasło</label>
+          <input type="password" id="serverPassword" placeholder="Wpisz hasło (min. 6 znaków)">
+        </div>
+        <div class="form-group">
+          <label for="serverPasswordConfirm">Potwierdź hasło</label>
+          <input type="password" id="serverPasswordConfirm" placeholder="Powtórz hasło">
+        </div>
+      </div>
+      <div id="serverError" class="error"></div>
+      <div class="modal-buttons">
+        <button id="createServerButton" class="modal-button primary">UTWÓRZ</button>
+        <button id="cancelServer" class="modal-button">ANULUJ</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@rails/actioncable@7.1.3/app/assets/javascripts/actioncable.js"></script>
+  <script src="discordo/script.js"></script>
+</body>
+</html>
